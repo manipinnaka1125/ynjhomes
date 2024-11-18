@@ -1,0 +1,139 @@
+/* Navbar Container */
+.navbar {
+    background-color: #ffffff; /* Darker blue for better contrast */
+    padding: 0.4rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+
+
+/* Navbar Container */
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Logo */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar-logo-img {
+    width: 90px; /* Adjust the logo size */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: #010101;
+    font-size: 1.1rem;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #fdba2d; /* Golden color */
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #fdba2d; /* Golden color on hover */
+    transform: scale(1.05);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+    display: none;
+    font-size: 2.5rem;
+    color: #ff1616;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu-icon:hover {
+    transform: rotate(90deg);
+}
+
+/* Mobile Navigation */
+.nav-links-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #686868;
+    z-index: 999;
+    list-style: none;
+    padding: 1rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-links-mobile.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-links-mobile .nav-link {
+    padding: 0.8rem 0;
+    font-size: 1.3rem;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s ease, padding-left 0.3s ease;
+}
+
+.nav-links-mobile .nav-link:hover {
+    background-color: #d8e4fd; /* Slightly lighter blue on hover */
+    padding-left: 1.2rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .nav-links-mobile.active {
+        display: flex;
+    }
+}

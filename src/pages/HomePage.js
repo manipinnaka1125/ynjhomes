@@ -71,11 +71,11 @@ const HomePage = () => {
                 <div className="more-content">
                   <h3>Real Estate Agency In Suwanee/Cumming</h3>
                   <p>
-                    We understand the marketplace and provide a smooth buying process for both new and seasoned buyers.
+                  We have a deep understanding of the marketplace, and trained for every aspect of the buying process. Our customized client approach and progressive thinking has made buying real estate with us a smooth process for all. Whether you are a first timer or a seasoned buyer the process of buying a home can be challenging!
                   </p>
                   <h3>Construction Services</h3>
                   <p>
-                    We offer end-to-end services from permits to framing homes. Licensed residential builders with a focus on quality.
+                  Either new construction or Rennovation we can help. Permits, Engineering work, Preparing Homesite, Laying the Foundation, Framing the Home, all MEP work. We are licensed residential builders and can take up start to finish. We can build home that's a perfect match for your budget, taste and lifestyle.
                   </p>
                 </div>
               )}

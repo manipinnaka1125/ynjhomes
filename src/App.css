@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: black;
 }
 body{
   background-color:black /*linear-gradient(135deg, #0f2027, #203a43, #2c5364);*/

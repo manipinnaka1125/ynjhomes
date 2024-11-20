@@ -91,6 +91,28 @@ const HomePage = () => {
         </div>
       </section>
 
+
+      <section className="why-choose-us-section">
+      <h2 className="section-title">WHY CHOOSE US</h2>
+      <p className="section-subtitle">Building Today For Better Futures</p>
+      <p className="section-description">
+        We build energy-efficient custom homes, renovations, and additions to existing dwellings.
+      </p>
+      <div className="why-choose-content">
+        <div className="why-choose-card">
+          <img src={banner1} alt="Engineers" className="why-choose-image" />
+          <p className="why-choose-text">We are young, talented, and certified engineers.</p>
+        </div>
+        <div className="why-choose-card">
+          <img src={banner1b} alt="Quality Projects" className="why-choose-image" />
+          <p className="why-choose-text">
+            We deliver quality projects on time, ensuring your satisfaction.
+          </p>
+        </div>
+      </div>
+      <button className="cta-button1">GET A CONSULTATION</button>
+    </section>
+
       <div style={{display:"flex",backgroundColor:"lightgrey"}}>
         {/* Slideshow Card 1 */}
         <section className="card-container">
@@ -194,33 +216,11 @@ const HomePage = () => {
       </div>
 
       {/* Features Section */}
-      <section className="features">
-        <center>
-          <h2 className="section-title">Features</h2>
-        </center>
-        <div className="feature-cards">
-          <div className="card">
-            <h3>Secure Transactions</h3>
-            <p>We ensure safe and secure transactions for all your property needs.</p>
-          </div>
-          <div className="card">
-            <h3>24/7 Support</h3>
-            <p>Our support team is here to help you whenever you need assistance.</p>
-          </div>
-        </div>
-      </section>
+      
+     
 
-      {/* Call to Action */}
-      <section className="cta-section">
-        <h2>Start your Home Journey Today</h2>
-        <p>Let us help you find the perfect home or property.</p>
-        <button className="cta-button">Get Started</button>
-      </section>
 
-      {/* Footer */}
-      <footer className="footer">
-        <p>&copy; 2024 YNJ Homes. All Rights Reserved.</p>
-      </footer>
+     
     </div>
   );
 };

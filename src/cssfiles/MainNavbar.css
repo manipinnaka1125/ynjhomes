@@ -1,6 +1,6 @@
 /* Navbar Container */
 .navbar {
-    background-color: #ffffff; /* Darker blue for better contrast */
+    background-color: #e4e4e4; /* Darker blue for better contrast */
     padding: 0.4rem 1rem;
     display: flex;
     justify-content: space-between;
@@ -11,7 +11,10 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
 }
-
+.navbar:hover {
+    background: linear-gradient(135deg, #646060, #5c8594, #ffffff);
+     /* Correct gradient syntax */
+}
 
 
 /* Navbar Container */
@@ -52,6 +55,7 @@
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
+
 .nav-link::after {
     content: "";
     position: absolute;
@@ -64,7 +68,7 @@
 }
 
 .nav-link:hover {
-    color: #fdba2d; /* Golden color on hover */
+    color: #ffc446; /* Golden color on hover */
     transform: scale(1.05);
 }
 

@@ -1,121 +1,123 @@
 /* General */
+/* General */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: white; /* Light background for a clean look */
-  }
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+/* Slideshow Section */
+.slideshow {
+  width: 100%; /* Full width */
+  overflow: hidden;
+  position: relative;
+  height: 400px; /* Default height for larger screens */
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.slideshowSlider {
+  display: flex;
+  transition: transform 0.8s ease;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.slide-image {
   
-  /* Slideshow Section */
-  .slideshow {
-    width: 100%; /* Occupies 60% of the page */
-    overflow: hidden;
-    position: relative;
-    height: 400px; /* Reduced size */
-    border-radius: 10px;
-    margin: 0 auto; /* Centers the slideshow horizontally */
-  }
-  
-  .slideshowSlider {
-    display: flex;
-    transition: transform 0.8s ease;
-  }
-  
-  .slide {
-    min-width: 100%;
-    height: 100%;
-   
-  }
-  
-  .slide-image {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    transition: transform 0.3s ease;
-  }
-  
-  .slide-image:hover {
-    transform: scale(0.9); /* Zoom effect on hover */
-  }
-  
-  /* Dot navigation styles */
-  .slideshowDots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-  }
-  
-  .slideshowDot {
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    background-color: rgb(255, 27, 27);
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .slideshowDot.active {
-    background-color: #333;
-  }
-  
-  /* Card Container */
-  .card-container {
-    margin-left: 80px; /* Adjust this value as needed */
-    height: 100%;
-    display: flex;
-    justify-content: center; /* Centers the cards horizontally */
-    align-items: center; /* Centers the cards vertically */
-    padding: 20px; /* Add padding to make sure the cards don't touch the edges */
+  object-position: center center;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.slide-image:hover {
+  transform: scale(1.9);
+}
+
+/* Dot navigation styles */
+.slideshowDots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.slideshowDot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: rgb(255, 27, 27);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slideshowDot.active {
+  background-color: #333;
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  justify-content: center; /* Centers the cards horizontally */
+  align-items: center; /* Centers the cards vertically */
+  padding: 20px;
+  flex-wrap: wrap;
+  background-color: #005576; /* Allow the cards to wrap in mobile view */
 }
 
 .card {
-    background: #932424;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 2rem;
-    max-width: 100%; /* Adjust width to make the card bigger */
-    height: auto; /* Allow height to adjust based on content */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 0 auto; /* Center the card inside the container */
+  background: #932424;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 100%; /* Full width */
+  height: auto; /* Height adjusts based on content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+   /* Allow 3 cards on desktop */
 }
 
-/* Optional: Add responsiveness to adjust card size on smaller screens */
+/* For mobile view */
 @media (max-width: 768px) {
-    .card-container {
-      margin-left: 0; /* Remove extra left margin on smaller screens */
-      flex-direction: column; /* Stack the cards vertically */
-      gap: 10px; /* Reduce gap between cards */
-    }
-  
-    .card {
-      max-width: 90%; /* Make the cards take up 90% width on mobile */
-      margin: 10px auto; /* Center the cards */
-    }
-  
-    .slideshow {
-      height: 250px; /* Adjust the slideshow height for smaller screens */
-    }
+  .card-container {
+    flex-direction: column; /* Stack the cards vertically */
+    gap: 10px; /* Reduce gap between cards */
   }
-  
-  /* Additional media queries for extra small devices (phone portrait) */
-  @media (max-width: 480px) {
-    .card {
-      max-width: 95%; /* Make cards take up nearly full width */
-    }
-  
-    .slideshow {
-      height: 200px; /* Further reduce slideshow height */
-    }
-  
-    .slideshowDot {
-      width: 8px;
-      height: 8px;
-    }
+
+  .card {
+    max-width: 90%; /* Adjust card width for mobile */
+    margin: 10px auto; /* Center the card */
   }
+
+  .slideshow {
+    height: 250px; /* Adjust the slideshow height for smaller screens */
+  }
+}
+
+/* For extra small devices (portrait phones) */
+@media (max-width: 480px) {
+  .card {
+    max-width: 95%; /* Make cards take up nearly full width */
+  }
+
+  .slideshow {
+    height: 200px; /* Further reduce slideshow height */
+  }
+
+  .slideshowDot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
   
   /* Hero Section */
   .hero-section {

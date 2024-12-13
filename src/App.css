@@ -1,9 +1,9 @@
 .App {
   text-align: center;
-  background-color: black;
+  background-color:linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 body{
-  background-color:black /*linear-gradient(135deg, #0f2027, #203a43, #2c5364);*/
+  background-color:linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 .App-logo {
   height: 40vmin;

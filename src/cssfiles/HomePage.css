@@ -239,30 +239,38 @@ body {
   }
   
   .cta-button {
-    border-radius: .25rem;
-    text-transform: uppercase;
-    font-style: normal;
-    font-weight: 400;
-    padding-left: 25px;
-    padding-right: 25px;
-    color: #fff;
-    -webkit-clip-path: polygon(0 0,0 0,100% 0,100% 0,100% calc(100% - 15px),calc(100% - 15px) 100%,15px 100%,0 100%);
-    clip-path: polygon(0 0,0 0,100% 0,100% 0,100% calc(100% - 15px),calc(100% - 15px) 100%,15px 100%,0 100%);
-    height: 40px;
-    font-size: 0.7rem;
-    line-height: 14px;
-    letter-spacing: 1.2px;
-    transition: .2s .1s;
-    background-image: linear-gradient(90deg,#1c1c1c,#4c00ff);
-    border: 0 solid;
-    overflow: hidden;
+    border-radius: 30px; /* Rounded edges for a smoother, modern look */
+ 
+    font-weight: 600; /* Slightly bolder font weight for better readability */
+    padding: 12px 30px; /* Increased padding for a more comfortable size */
+    color: #fff; /* White text color for contrast */
+    background-image: linear-gradient(90deg, #000000, #626262); /* Soft gradient background */
+    border: none; /* No border, relying on the gradient background */
+    font-size: 1rem; /* More readable font size */
+    letter-spacing: 1px; /* Space between letters for clarity */
+    transition: 0.3s ease-out; /* Smooth transition for hover effect */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    outline: none; /* Removes outline on focus */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
   
+  /* Hover effect */
   .cta-button:hover {
-    cursor: pointer;
-    transition: all .3s ease-in;
-    padding-right: 30px;
-    padding-left: 30px;
+    background-image: linear-gradient(90deg, #ffffff, #ffffff); /* Reverse gradient on hover */
+    padding-left: 35px; 
+    color: black;/* Slight padding increase for hover */
+    padding-right: 35px; /* Slight padding increase for hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+    transform: translateY(-2px); /* Subtle movement for better user interaction */
+  }
+  
+  /* Focus state */
+  .cta-button:focus {
+    outline: none; /* Removes default focus outline */
+    box-shadow: 0 0 0 3px rgba(76, 0, 255, 0.4); /* Focus ring to indicate focus */
   }
   
  

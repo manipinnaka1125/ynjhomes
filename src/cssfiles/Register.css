@@ -1,0 +1,180 @@
+/* Global Styling */
+body {
+    background-image: linear-gradient(135deg, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .register-container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    margin-top: 210px; /* Adjusted margin for better vertical alignment */
+    margin-bottom: 230px; /* Adjusted margin */
+  }
+  
+  .register-right {
+    background-color: #ffffff;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px; /* Slightly rounded corners for a more modern look */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Increased shadow for more depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .register-right:hover {
+    transform: translateY(-5px); /* Subtle hover effect */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+  }
+  
+  .register-title {
+    font-size: 2.8em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .register-description {
+    font-size: 1.3em;
+    color: #666;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .form-input {
+    padding: 12px;
+    font-size: 1em;
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9; /* Light background for inputs */
+  }
+  
+  .form-input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    outline: none;
+    background-color: #ffffff; /* Slight background change on focus */
+  }
+  
+  .register-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .register-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  }
+  
+  .register-btn:active {
+    transform: scale(1);
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.4);
+  }
+  
+  /* Error message styling */
+  .error-text {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+  /* OTP Form Styling */
+  .otp-form {
+    margin-top: 20px;
+  }
+  
+  .otp-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .otp-form .form-input {
+    padding: 12px;
+    font-size: 1em;
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .otp-form .form-input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    outline: none;
+    background-color: #ffffff;
+  }
+  .check-email-btn {
+    margin-top: 5px;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .email-status {
+    margin-top: 5px;
+    font-size: 14px;
+    color: red; /* Or green if the email is available */
+  }
+  
+  .signin-link {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .signin-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .signin-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .register-container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .register-right {
+      width: 90%;
+      padding: 30px;
+      border-radius: 12px;
+    }
+  }
+  

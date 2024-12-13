@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../cssfiles/HomePage.css";
 import foundersimage from "../images/foundersimage.jpg"; // Add your founder's photo here
-
+import { useNavigate } from "react-router-dom";
 import banner2a from "../images/banner2a.jpg";
 
 import banner2c from "../images/banner2c.jpg";
@@ -27,6 +27,14 @@ const HomePage = () => {
       clearTimeout(timeoutRef.current);
     }
   }
+  const navigate = useNavigate();
+
+  const navigatetoRegister = () => {
+    navigate("/register");
+  };
+  const navigatetoContact =()=>{
+    navigate("/contact-us")
+  }
 
   // Handle the automatic transition for each slideshow
   useEffect(() => {
@@ -51,7 +59,7 @@ const HomePage = () => {
           <p className="hero-subtitle">
             Find, Buy, Rent, or Sell your dream home with confidence.
           </p>
-          <button className="cta-button">Get Started</button>
+          <button onClick={navigatetoRegister} className="cta-button">Join Now</button>
         </div>
       </header>
 
@@ -102,7 +110,7 @@ const HomePage = () => {
             </p>
           </div>
         </div>
-        <button className="cta-button1">GET A CONSULTATION</button>
+        <button onClick={navigatetoContact} className="cta-button1">GET A CONSULTATION</button>
       </section>
 
       {/* Slideshow Cards */}

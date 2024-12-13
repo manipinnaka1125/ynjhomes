@@ -1,98 +1,154 @@
 /* Navbar Container */
 .navbar {
-    background-color: #e4e4e4; /* Darker blue for better contrast */
-    padding: 0.4rem 1rem;
+    background: linear-gradient(90deg, #f7faff, #e6efff);
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-}
-/*.navbar:hover {
-    background: linear-gradient(135deg, #646060, #5c8594, #ffffff);
-      Correct gradient syntax 
-}*/
-
-
-/* Navbar Container */
-.navbar-container {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .navbar:hover {
+    background: linear-gradient(90deg, #e6efff, #dcefff);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-}
-
-/* Logo */
-.navbar-logo {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Logo */
+  .navbar-logo {
     display: flex;
     align-items: center;
     text-decoration: none;
-}
-
-.navbar-logo-img {
-    width: 90px; /* Adjust the logo size */
+  }
+  
+  .navbar-logo-img {
+    width: 120px;
     height: auto;
     object-fit: contain;
-}
-
-/* Navigation Links */
-.nav-links {
+    transition: transform 0.3s ease;
+  }
+  
+  .navbar-logo:hover .navbar-logo-img {
+    transform: scale(1.1);
+  }
+  
+  /* Navigation Links */
+  .nav-links {
     display: flex;
     list-style: none;
     gap: 2.5rem;
     align-items: center;
-}
-
-.nav-link {
-    color: #010101;
-    font-size: 1.1rem;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  
+  .nav-link {
+    color: #4a4a4a;
+    font-size: 1.4rem;
     text-decoration: none;
+    font-weight: 500;
     position: relative;
-    padding-bottom: 5px;
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-
-.nav-link::after {
+    padding-bottom: 6px;
+    transition: color 0.3s ease, transform 0.3s ease;
+   
+  }
+  
+  .nav-link::after {
     content: "";
     position: absolute;
     width: 0;
     height: 2px;
-    background: #fdba2d; /* Golden color */
+    background: #85b6ff;
     left: 0;
     bottom: 0;
     transition: width 0.3s ease;
-}
-
-.nav-link:hover {
-    color: #ffc446; /* Golden color on hover */
-    transform: scale(1.05);
-}
-
-.nav-link:hover::after {
+  }
+  
+  .nav-link:hover {
+    color: #0056b3;
+    transform: scale(1.1);
+  }
+  
+  .nav-link:hover::after {
     width: 100%;
-}
-
-/* Mobile Menu Icon */
-.mobile-menu-icon {
+  }
+  
+  /* Right-aligned Number */
+  /* Right-aligned Number */
+.navbar-number {
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4a4a4a;
+    display: block;
+    padding: 0.5rem 1rem;
+    margin-right: 10px;
+    border: 2px solid #4a4a4a;
+    border-radius: 5px;
+    background-color: transparent;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a modern effect */
+  }
+  
+  /* Hover effect for the number */
+  .navbar-number:hover {
+    background-color: #f1f1f1;
+    color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* On focus - border change */
+  .navbar-number:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5); /* Blue glow effect */
+  }
+  
+  /* Make sure the number remains professional and clean */
+  .navbar-number {
+    display: block; /* Ensure it stays aligned properly */
+    text-align: center; /* Center the text inside */
+    white-space: nowrap; /* Prevent text from wrapping */
+  }
+  
+  /* Add responsive styling for mobile */
+  @media screen and (max-width: 768px) {
+    .navbar-number {
+      font-size: 1rem; /* Adjust font size for mobile */
+      padding: 0.3rem 0.8rem;
+    }
+  }
+  
+  /* Mobile Menu Icon */
+  .mobile-menu-icon {
     display: none;
     font-size: 2.5rem;
-    color: #ff1616;
+    color: #0056b3;
     background: none;
     border: none;
     cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.mobile-menu-icon:hover {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .mobile-menu-icon:hover {
     transform: rotate(90deg);
-}
-
-/* Mobile Navigation */
-.nav-links-mobile {
+    color: #85b6ff;
+  }
+  
+  /* Mobile Navigation */
+  .nav-links-mobile {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,44 +156,68 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: #686868;
+    background: #f7faff;
     z-index: 999;
     list-style: none;
     padding: 1rem 0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.nav-links-mobile.active {
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.5s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-links-mobile.active {
     opacity: 1;
     visibility: visible;
-}
-
-.nav-links-mobile .nav-link {
-    padding: 0.8rem 0;
-    font-size: 1.3rem;
-    color: #fff;
+    transform: translateY(0);
+  }
+  
+  .nav-links-mobile .nav-link {
+    padding: 1.2rem 0;
+    font-size: 1.2rem;
+    color: #4a4a4a;
     text-decoration: none;
     transition: background 0.3s ease, padding-left 0.3s ease;
-}
-
-.nav-links-mobile .nav-link:hover {
-    background-color: #d8e4fd; /* Slightly lighter blue on hover */
-    padding-left: 1.2rem;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+  }
+  
+  /* Hide .navbar-number on mobile */
+  @media screen and (max-width: 768px) {
     .nav-links {
-        display: none;
+      display: none;
     }
-
+  
+    .navbar-number {
+      display: none; /* Hide number on mobile */
+    }
+  
     .mobile-menu-icon {
-        display: block;
+      display: block;
     }
-
+  
     .nav-links-mobile.active {
-        display: flex;
+      display: flex;
     }
-}
+  }
+  
+  /* Sign In specific style */
+.navbar-signin {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    border-radius: 8px;
+    margin-right: 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+ 
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
+  .navbar-signin:hover {
+    background-color: #555555;
+    color: white;
+  }
+  

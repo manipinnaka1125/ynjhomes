@@ -1,43 +1,45 @@
 import React from "react";
-import banner1 from "../images/banner1.jpg";
-import banner1c from "../images/banner1c.jpg";
-
+import s1 from "../images/s1.jpg";
+import s2 from "../images/s2.jpg";
+import s3 from "../images/s3.jpg";
+import s4 from "../images/s4.jpg";
 const styles = {
-    
-    container: {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "20px",
-        background: "linear-gradient(135deg, #0f2027, #203a43, #2c5364)", // Updated background
-        minHeight: "100vh", // Ensures it covers the entire viewport height
-      },
-      heading: {
-        textAlign: "center",
-        marginBottom: "10px",
-        fontSize: "2em",
-        color: "#ffffff", // Adjust for better contrast
-        fontWeight: 700,
-        fontFamily: "Arial, Helvetica, sans-serif",
-      },
-      subheading: {
-        textAlign: "center",
-        marginBottom: "20px",
-        fontSize: "1.5em",
-        color: "#d4e4e5", // Adjust for better contrast
-        fontWeight: 500,
-        fontFamily: "Arial, Helvetica, sans-serif",
-      },
-      cardWrapper: {
-        display: "flex",
-        justifyContent: "center",
-        flexWrap: "wrap",
-      },
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    padding: "20px",
+    background: "linear-gradient(135deg, #0f2027, #203a43, #2c5364)",
+    minHeight: "100vh",
+  },
+  heading: {
+    textAlign: "center",
+    marginBottom: "10px",
+    fontSize: "2em",
+    color: "#ffffff",
+    fontWeight: 700,
+    fontFamily: "Arial, Helvetica, sans-serif",
+  },
+  subheading: {
+    textAlign: "center",
+    marginBottom: "20px",
+    fontSize: "1.5em",
+    color: "#d4e4e5",
+    fontWeight: 500,
+    fontFamily: "Arial, Helvetica, sans-serif",
+  },
+  cardWrapper: {
+    display: "flex",
+    justifyContent: "center",
+    flexWrap: "wrap",
+    gap: "20px",
+    paddingTop: "20px",
+  },
   card: {
-    display: "block",
+    
     position: "relative",
-    maxWidth: "300px",
-    maxHeight: "320px",
+    width: "300px",  // Ensure it's not maxed out and allows for flexibility
+    height: "400px", // Adjusted height to allow enough room for content
     backgroundColor: "#f2f8f9",
     borderRadius: "10px",
     padding: "2em 1.2em",
@@ -47,6 +49,9 @@ const styles = {
     overflow: "hidden",
     background: "linear-gradient(to bottom, #c3e6ec, #a7d1d9)",
     fontFamily: "Arial, Helvetica, sans-serif",
+    display: "flex",
+    flexDirection: "column", // Make sure to allow proper stacking
+    justifyContent: "space-between", // Ensures the button is at the bottom
   },
   cardBefore: {
     content: '""',
@@ -93,43 +98,71 @@ const styles = {
     marginBottom: "15px",
     objectFit: "cover",
   },
+  button: {
+    padding: "10px 15px",
+    fontSize: "1em",
+    color: "#fff",
+    backgroundColor: "#007BFF",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    textDecoration: "none",
+    display: "inline-flex",
+    alignItems: "center",
+    gap: "5px",
+    marginTop: "auto", // Ensures the button is at the bottom of the card
+  },
+  buttonHover: {
+    backgroundColor: "#0056b3",
+  },
 };
+
 
 const services = [
   {
     id: 1,
     title: "Buy Property",
     description: "Find your dream home effortlessly.",
-    image: banner1,
+    image: s1,
+    buttonText: "Add Property",
+    emoji: "🏡",
+    link: "/register",
   },
   {
     id: 2,
     title: "Sell Property",
     description: "Sell your property at the best value.",
-    image: banner1c,
+    image: s2,
+    buttonText: "Add Property",
+    emoji: "🏡",
+    link: "/register",
   },
   {
     id: 3,
     title: "Home Improvements",
     description: "Enhance the beauty of your home.",
-    image: banner1c,
+    image:s3,
+    buttonText: "Add Property",
+    emoji: "🛠️",
+    link: "/register",
   },
   {
-    id: 3,
-    title: "Home Improvements",
-    description: "Enhance the beauty of your home.",
-    image: banner1c,
+    id: 4,
+    title: "Rent Property",
+    description: "Find rental properties near you.",
+    image: s4,
+    buttonText: "Browse Rentals",
+    emoji: "🏠",
+    link: "/register",
   },
 ];
 
 const Services = () => {
   const handleMouseEnter = (e) => {
     const card = e.currentTarget;
-    card.querySelector(".card-hover-before").style.transform =
-      styles.cardHoverBefore.transform;
+    card.querySelector(".card-hover-before").style.transform = styles.cardHoverBefore.transform;
     card.querySelector(".card-title").style.color = styles.cardTitleHover.color;
-    card.querySelector(".small-desc").style.color =
-      styles.smallDescHover.color;
+    card.querySelector(".small-desc").style.color = styles.smallDescHover.color;
   };
 
   const handleMouseLeave = (e) => {
@@ -164,6 +197,14 @@ const Services = () => {
             <p className="small-desc" style={styles.smallDesc}>
               {service.description}
             </p>
+            <a
+              href={service.link}
+              style={styles.button}
+              onMouseEnter={(e) => (e.target.style.backgroundColor = styles.buttonHover.backgroundColor)}
+              onMouseLeave={(e) => (e.target.style.backgroundColor = "#007BFF")}
+            >
+              {service.emoji} {service.buttonText}
+            </a>
           </div>
         ))}
       </div>

@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import "../cssfiles/Footer.css"; // Ensure you have the correct path to your CSS file
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+
+    // Ensure email is not empty
+    if (!email) {
+      setMessage("Please enter a valid email.");
+      return;
+    }
+
+    try {
+      const response = await axios.post('http://localhost:8080/api/subscribe', { email });
+      setMessage(response.data); // Set success message from backend
+      setEmail(""); // Clear the email input field
+    } catch (error) {
+      setMessage("Failed to subscribe. Please try again."); // Error message
+    }
+  };
+
   return (
     <footer className="footer-container">
       <div className="footer-content">
@@ -42,10 +64,17 @@ const Footer = () => {
         <div className="footer-section newsletter">
           <h3>Newsletter</h3>
           <p>Stay updated with our latest news and offers. Subscribe to our newsletter:</p>
-          <form>
-            <input type="email" placeholder="Email" required />
+          <form onSubmit={handleSubscribe}>
+            <input 
+              type="email" 
+              placeholder="Email" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+              required 
+            />
             <button type="submit">Subscribe</button>
           </form>
+          {message && <p className="subscription-message">{message}</p>}
         </div>
       </div>
 

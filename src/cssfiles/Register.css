@@ -4,37 +4,37 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-  }
-  
-  .register-container {
+}
+
+.register-container {
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
     font-family: 'Arial', sans-serif;
-    margin-top: 210px; /* Adjusted margin for better vertical alignment */
-    margin-bottom: 230px; /* Adjusted margin */
-  }
-  
-  .register-right {
+    margin-top: 300px; 
+    margin-bottom: 300px;/* Adjusted margin for better vertical alignment */
+}
+
+.register-right {
     background-color: #ffffff;
     padding: 40px;
     width: 100%;
-    max-width: 500px;
+    max-width: 900px; /* Wider container */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 12px; /* Slightly rounded corners for a more modern look */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Increased shadow for more depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
-  }
-  
-  .register-right:hover {
-    transform: translateY(-5px); /* Subtle hover effect */
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
-  }
-  
-  .register-title {
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-right:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.register-title {
     font-size: 2.8em;
     font-weight: bold;
     color: #333;
@@ -42,44 +42,51 @@ body {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
-  }
-  
-  .register-description {
+}
+
+.register-description {
     font-size: 1.3em;
     color: #666;
     margin-bottom: 30px;
     text-align: center;
-  }
-  
-  .form-group {
+}
+
+/* Horizontal Form Group */
+.form-group {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  
-  .form-group label {
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 20px; /* Adds spacing between fields */
+}
+
+.form-group label {
     font-weight: bold;
     color: #444;
-  }
-  
-  .form-input {
+    min-width: 150px; /* Ensures label width */
+    margin-right: 10px;
+    text-align: left;
+}
+
+.form-input {
     padding: 12px;
     font-size: 1em;
-    width: 100%;
     border: 2px solid #ccc;
     border-radius: 8px;
     transition: all 0.3s ease;
-    background-color: #f9f9f9; /* Light background for inputs */
-  }
-  
-  .form-input:focus {
+    width: 200px; /* Fixed width for uniform inputs */
+}
+
+.form-input:focus {
     border-color: #007BFF;
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
     outline: none;
-    background-color: #ffffff; /* Slight background change on focus */
-  }
-  
-  .register-btn {
+    background-color: #ffffff;
+}
+
+/* Register Button */
+.register-btn {
     background-color: #007BFF;
     color: white;
     padding: 15px;
@@ -90,91 +97,161 @@ body {
     transition: all 0.3s ease;
     margin-top: 20px;
     width: 100%;
-  }
-  
-  .register-btn:hover {
+}
+
+.register-btn:hover {
     background-color: #0056b3;
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
-  }
-  
-  .register-btn:active {
+}
+
+.register-btn:active {
     transform: scale(1);
     box-shadow: 0 2px 4px rgba(0, 123, 255, 0.4);
-  }
-  
-  /* Error message styling */
-  .error-text {
+}
+
+/* Error message styling */
+.error-text {
     color: red;
     font-size: 0.9em;
     margin-top: 5px;
-  }
-  
-  /* OTP Form Styling */
-  .otp-form {
+}
+
+/* OTP Form Styling */
+.otp-form {
     margin-top: 20px;
-  }
-  
-  .otp-form .form-group {
+}
+
+.otp-form .form-group {
     margin-bottom: 20px;
-  }
-  
-  .otp-form .form-input {
+}
+
+.otp-form .form-input {
     padding: 12px;
     font-size: 1em;
     width: 100%;
     border: 2px solid #ccc;
     border-radius: 8px;
     transition: all 0.3s ease;
-  }
-  
-  .otp-form .form-input:focus {
+}
+
+.otp-form .form-input:focus {
     border-color: #007BFF;
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
     outline: none;
     background-color: #ffffff;
-  }
-  .check-email-btn {
+}
+
+.check-email-btn {
     margin-top: 5px;
     padding: 8px 16px;
     background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
-  }
-  
-  .email-status {
+}
+
+.email-status {
     margin-top: 5px;
     font-size: 14px;
-    color: red; /* Or green if the email is available */
-  }
-  
-  .signin-link {
+    color: red;
+}
+
+.signin-link {
     margin-top: 20px;
     text-align: center;
-  }
-  
-  .signin-link a {
+}
+
+.signin-link a {
     color: #007bff;
     text-decoration: none;
     font-weight: bold;
-  }
-  
-  .signin-link a:hover {
+}
+
+.signin-link a:hover {
     text-decoration: underline;
+}
+/* Register.css */
+
+.detect-location-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
   }
   
-  /* Responsive Design */
-  @media screen and (max-width: 768px) {
+  .detect-location-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .detect-location-btn:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+  
+  .location-status {
+    color: #4CAF50;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .location-status-error {
+    color: #f44336;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .detect-location-btn, .location-status, .location-status-error {
+    margin-top: 10px;
+  }
+  
+/* Loading spinner styles */
+/* Spinner styling */
+.loading-spinner {
+    border: 4px solid #f3f3f3; /* Light gray */
+    border-top: 4px solid #007BFF; /* Blue */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
     .register-container {
-      flex-direction: column;
-      height: auto;
+        flex-direction: column;
+        height: auto;
     }
-  
+
     .register-right {
-      width: 90%;
-      padding: 30px;
-      border-radius: 12px;
+        width: 90%;
+        padding: 30px;
+        border-radius: 12px;
     }
-  }
-  
+
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group label {
+        min-width: 0;
+        text-align: left;
+    }
+
+    .form-input {
+        width: 100%;
+    }
+}

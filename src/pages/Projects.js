@@ -1,38 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../cssfiles/Projects.css"; // Import the CSS file for styling
-import g1 from "../images/g1.jpg";
-import g2 from "../images/g2.jpg";
-import g3 from "../images/g3.jpg";
-
-
-const projects = [
-  {
-    id: 1,
-    title: "Gainesville, GA",
-    description: "As your trusted home builder, we're creating new home communities with the location, amenities, home designs, and lifestyle you deserve.",
-    image: g1, // Replace with your actual image path
-  },
-  {
-    id: 2,
-    title: "Atlanta, GA",
-    description: "Discover beautiful new homes with world-class amenities in Atlanta, Georgia. Your dream home is waiting.",
-    image: g2, // Replace with your actual image path
-  },
-  {
-    id: 3,
-    title: "Savannah, GA",
-    description: "Explore our latest developments in Savannah, Georgia, offering exceptional value, quality, and community-focused living.",
-    image: g3, // Replace with your actual image path
-  },
-  {
-    id: 4,
-    title: "Charleston, SC",
-    description: "Experience modern living with a historic charm in Charleston, SC. Enjoy a variety of home styles in an ideal location.",
-    image: g3, // Replace with your actual image path
-  },
-];
+import { useNavigate } from "react-router-dom"; // To handle redirection
 
 const Projects = () => {
+  const [projects, setProjects] = useState([]); // Array to hold the property data
+  const [showAll, setShowAll] = useState(false); // State to control showing more projects
+  const navigate = useNavigate(); // Hook for redirection
+
+  // Fetch the properties when the component mounts
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
+  // Function to fetch properties from the backend
+  const fetchProjects = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/api/properties");
+      setProjects(response.data); // Set the fetched properties to state
+    } catch (error) {
+      console.error("Error fetching properties:", error);
+    }
+  };
+
+  // Function to get the image URL from the backend
+  const getImageUrl = (imagePath) => {
+    if (!imagePath) return ""; // Return empty string if no image path exists
+    return `http://localhost:8080/api/files/${imagePath}`; // Adjust URL based on your backend configuration
+  };
+
+  // Handle "Unlock" button click (redirect to /register)
+  const handleUnlock = () => {
+    navigate("/register"); // Redirect to /register
+  };
+
   return (
     <div className="projects-container">
       <h1 className="projects-heading">Our Selected Projects</h1>
@@ -41,16 +42,40 @@ const Projects = () => {
         As your trusted home builder, we're creating new home communities with the location, amenities, home designs, and lifestyle you deserve.
       </p>
       <div className="projects-wrapper">
-        {projects.map((project) => (
+        {/* Display only 3 or 4 projects initially */}
+        {projects.slice(0, showAll ? projects.length : 4).map((project) => (
           <div key={project.id} className="project-card">
-            <img src={project.image} alt={project.title} className="project-image" />
-            <div className="project-info">
-              <h3 className="project-title">{project.title}</h3>
-              <p className="project-description">{project.description}</p>
+            <div className="project-card-overlay">
+              <img
+                src={getImageUrl(project.image)}
+                alt={project.title}
+                className="project-image"
+              />
+              <div className="project-info">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
+              </div>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Display View More / Locked Symbol */}
+      {!showAll && (
+        <div className="view-more-container">
+          <button className="view-more-btn" onClick={() => setShowAll(true)}>
+            View More
+          </button>
+          <div className="locked-symbol">
+            <span role="img" aria-label="lock">
+              🔒
+            </span>
+            <button className="unlock-btn" onClick={handleUnlock}>
+              Unlock to View All
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

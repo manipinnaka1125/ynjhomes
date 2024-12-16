@@ -1,0 +1,153 @@
+/* General Layout for Dashboard */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f8f9fa;
+  }
+  
+  .dashboard-main-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+  }
+  
+  .dashboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 32px;
+    color: #2c3e50;
+  }
+  
+  .dashboard-header p {
+    font-size: 18px;
+    color: #7f8c8d;
+  }
+  
+  .dashboard-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  
+  .stat-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 30%;
+  }
+  
+  .stat-card h3 {
+    font-size: 18px;
+    color: #34495e;
+  }
+  
+  .stat-card p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e74c3c;
+  }
+  
+  .search-section {
+    margin-bottom: 30px;
+  }
+  
+  .search-section h2 {
+    font-size: 24px;
+    color: #34495e;
+    margin-bottom: 10px;
+  }
+  
+  .search-input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+  }
+  
+  .search-btn {
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .search-btn:hover {
+    background-color: #e67e22;
+  }
+  
+  .suggested-properties h2 {
+    font-size: 24px;
+    color: #34495e;
+    margin-bottom: 20px;
+  }
+  
+  .property-cards {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .property-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+  }
+  
+  .property-card h3 {
+    font-size: 18px;
+    color: #2c3e50;
+  }
+  
+  .property-card p {
+    font-size: 16px;
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  .view-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .view-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .recent-activity h2 {
+    font-size: 24px;
+    color: #34495e;
+    margin-bottom: 20px;
+  }
+  
+  .recent-activity ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .recent-activity li {
+    background-color: #fff;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  

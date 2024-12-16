@@ -12,8 +12,8 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Arial', sans-serif;
-    margin-top: 300px; 
-    margin-bottom: 300px;/* Adjusted margin for better vertical alignment */
+    margin-top: 500px; 
+    margin-bottom: 500px;/* Adjusted margin for better vertical alignment */
 }
 
 .register-right {
@@ -40,7 +40,7 @@ body {
     color: #333;
     margin-bottom: 15px;
     text-align: center;
-    text-transform: uppercase;
+   
     letter-spacing: 1px;
 }
 
@@ -232,7 +232,9 @@ body {
 @media screen and (max-width: 768px) {
     .register-container {
         flex-direction: column;
-        height: auto;
+        margin-top: 500px; 
+        margin-bottom: 500px;
+   
     }
 
     .register-right {

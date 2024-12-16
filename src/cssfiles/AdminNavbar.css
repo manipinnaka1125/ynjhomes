@@ -1,0 +1,90 @@
+/* Admin/Navbar Container */
+.admin-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50; /* Darker, more professional color */
+    padding: 20px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    position: relative;
+}
+
+/* Hover effect for Admin Navbar */
+.admin-navbar:hover {
+    background-color: #34495e; /* Slightly lighter on hover */
+}
+
+/* Left Section (Links) */
+.admin-nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.admin-nav-left a {
+    color: #ecf0f1; /* Light color for text */
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.admin-nav-left a:hover {
+    color: #f39c12; /* Golden color on hover */
+    transform: translateY(-3px);
+}
+
+/* Golden underline effect on hover */
+.admin-nav-left a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #f39c12; /* Golden underline on hover */
+    transition: width 0.3s;
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+}
+
+.admin-nav-left a:hover::after {
+    width: 100%;
+}
+
+/* Logout Button */
+.admin-profile button {
+    background-color: #e74c3c; /* Red tone */
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.admin-profile button:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Toast styles */
+.Toastify__toast-container {
+    top: 10px;
+    right: 10px;
+}
+
+.Toastify__toast {
+    background-color: #27ae60; /* Green success color */
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

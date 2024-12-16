@@ -3,8 +3,10 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../cssfiles/Register.css";
-
+import { useNavigate } from "react-router-dom";
 const Register = () => {
+
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -164,7 +166,8 @@ const Register = () => {
         setFormData({ ...formData, emailVerified: true });
         toast.success("Email verified successfully!");
         toast.success("you have been registered succesfully");
-        window.location.reload();
+        toast.success("please login with your credentials");
+        navigate("/signin")
       }
     } catch (error) {
       toast.error("Invalid OTP, please try again.");

@@ -134,7 +134,7 @@ const Register = () => {
         setFormData({ ...formData, otpSent: true });
         
         toast.success("OTP sent successfully!");
-       
+       console.log(response)
       } catch (error) {
         console.error("Error sending OTP:", error);
         toast.error("Failed to send OTP.");
